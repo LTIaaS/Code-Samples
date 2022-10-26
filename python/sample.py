@@ -60,6 +60,7 @@ class LTIaaSClient:
 ltiaas_client = LTIaaSClient(base_url='https://your.ltiaas.com', api_key='your_api_key')
 
 # Inside a request handler
-ltik = request.GET.get('ltik') # Retrieve ltik from query parameters
+ltik = http_request.query_parameters.get('ltik') # Retrieve ltik from query parameters (Depends on framework)
+
 id_token = ltiaas_client.get_id_token(ltik=ltik) # Retrieve ID Token containing user, platform and launch information
 """
